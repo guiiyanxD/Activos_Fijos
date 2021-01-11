@@ -14,4 +14,13 @@ class Estado extends Model
     protected $fillable=[
         'nombre','descripcion'
     ];
+
+    public function user(){
+        return  $this->hasOne(User::class, 'estado_id');
+    }
+
+    public function activo(){
+        return $this->hasOne(Activo_Fijo::class,'estado_id');
+    }
+
 }

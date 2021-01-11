@@ -14,4 +14,8 @@ class Rol extends Model
     protected $fillable = [
         'nombre', 'descripcion',
     ];
+
+    public function user(){
+        return $this->hasOne(User::class, 'rol_id');
+    }
 }

@@ -13,4 +13,8 @@ class Solicitud extends Model
     protected $fillable = [
         'fecha', 'user_id',
     ];
+
+    public function activo(){
+        return $this->hasMany(Activo_Fijo::class,'solicitud_id');
+    }
 }

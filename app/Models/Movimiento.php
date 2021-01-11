@@ -13,4 +13,8 @@ class Movimiento extends Model
     protected $fillable = [
         'fecha','user_id','departamento_id',
     ];
+
+    public function activo(){
+        return $this->hasMany(Activo_Fijo::class,'movimiento_id');
+    }
 }

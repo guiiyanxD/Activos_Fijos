@@ -13,4 +13,8 @@ class Proveedor extends Model
     protected $fillable=[
         'nombre','contacto_id','estado_id',
     ];
+
+    public function adquisicion(){
+        return $this->hasMany(Adquisicion::class,'proveedor_id');
+    }
 }

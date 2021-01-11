@@ -16,6 +16,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $primaryKey = 'id_usuario';
     protected $fillable = [
         'nombre',
         'apellido',
@@ -44,4 +45,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function contacto(){
+        return $this->hasOne(Contacto::class,'contacto_id');
+    }
+
+    public function rol(){
+        return $this->belongsTo(Rol::class,'rol_id');
+    }
+
+    public function estado(){
+        return $this->belongsTo(Estado::class, 'estado_id');
+    }
+
+    public function adquisicion()
+    {
+        return $this->hasMany(Adquisicion::class, 'user_id');
+    }
 }

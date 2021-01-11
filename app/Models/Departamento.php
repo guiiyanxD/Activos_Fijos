@@ -13,4 +13,8 @@ class Departamento extends Model
     protected $fillable = [
         'nombre','descripcion','ubicacion_id','user_id', 'estado',
     ];
+
+    public function activo(){
+        return $this->hasMany(Activo_Fijo::class,'departamento_id');
+    }
 }

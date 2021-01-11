@@ -13,4 +13,13 @@ class Almacen extends Model
     protected $fillable=[
         'direccion','estado',
     ];
+
+    public function activo(){
+        return $this->hasMany(Activo_Fijo::class, 'almacen_id');
+    }
+
+    public function adquisicion(){
+        return $this->hasMany(Adquisicion::class,'almacen_id');
+    }
+
 }

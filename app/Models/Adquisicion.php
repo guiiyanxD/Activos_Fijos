@@ -13,4 +13,16 @@ class Adquisicion extends Model
     protected $fillable=[
         'fecha','almacen_id','proveedor_id','user_id',
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class,'user_id');
+    }
+
+    public function proveedor(){
+        return $this->belongsTo(Proveedor::class,'proveedor_id');
+    }
+
+    public function almacen(){
+            return $this->belongsTo(Almacen::class,'almacen_id');
+    }
 }

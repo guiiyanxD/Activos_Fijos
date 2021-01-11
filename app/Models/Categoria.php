@@ -15,4 +15,8 @@ class Categoria extends Model
         'descripcion',
         'rubro_id',
     ];
+
+    public function activo(){
+        return $this->hasOne(Activo_Fijo::class, 'categoria_id');
+    }
 }
