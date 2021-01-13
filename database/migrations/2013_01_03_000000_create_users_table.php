@@ -23,10 +23,12 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->unsignedBigInteger('rol_id')->nullable();
             $table->unsignedBigInteger('estado_id')->nullable();
+            $table->unsignedBigInteger('contacto_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
 
 
+            $table->foreign('contacto_id')->references('id_contacto')->on('contactos');
             $table->foreign('rol_id')->references('id_rol')->on('roles')->onDelete('cascade');
             $table->foreign('estado_id')->references('id_estado')->on('estados')->onDelete('cascade');
         });

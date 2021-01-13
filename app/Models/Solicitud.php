@@ -17,4 +17,13 @@ class Solicitud extends Model
     public function activo(){
         return $this->hasMany(Activo_Fijo::class,'solicitud_id');
     }
+
+    public function det_solicitud(){
+        return $this->hasMany(Detalle_Solicitud::class,'solicitud_id');
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class,'user_id');
+    }
+
 }

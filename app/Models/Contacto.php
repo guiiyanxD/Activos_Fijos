@@ -11,14 +11,18 @@ class Contacto extends Model
     protected $table = 'contactos';
     protected $primaryKey = 'id_contacto';
     protected $fillable = [
-        'usuario_id',
+        'user_id',
         'direccion',
         'celular',
         'telefono',
         'email_personal',
     ];
-
+//TODO: relacion entre usuario y contacto esta al reves. corregir.
     public function User(){
-        return $this->belongsTo(User::class, 'contacto_id');
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function proveedor(){
+        return $this->hasOne(Proveedor::class,'contacto_id');
     }
 }

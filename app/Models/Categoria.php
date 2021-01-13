@@ -19,4 +19,16 @@ class Categoria extends Model
     public function activo(){
         return $this->hasOne(Activo_Fijo::class, 'categoria_id');
     }
+
+    public function rubro(){
+        return $this->belongsTo(Rubro::class,'rubro_id');
+    }
+
+    public function det_adquisicion(){
+        return $this->hasOne(Detalle_Adquisicion::class,'categoria_id');
+    }
+
+    public function det_solicitud(){
+        return $this->hasOne(Detalle_Solicitud::class,'categoria_id');
+    }
 }

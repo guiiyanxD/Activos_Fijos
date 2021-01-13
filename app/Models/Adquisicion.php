@@ -23,6 +23,10 @@ class Adquisicion extends Model
     }
 
     public function almacen(){
-            return $this->belongsTo(Almacen::class,'almacen_id');
+        return $this->belongsTo(Almacen::class,'almacen_id');
+    }
+
+    public function Det_Adquisicion(){
+        return $this->hasMany(Detalle_Adquisicion::class,'adquisicion_id');
     }
 }

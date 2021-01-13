@@ -13,4 +13,8 @@ class Depreciacion extends Model
     protected $fillable=[
         'depreciacion_acumulada','descripcion','fecha','AF_id',
     ];
+
+    public function activo(){
+        return $this->belongsTo(Activo_Fijo::class,'AF_id');
+    }
 }

@@ -25,6 +25,7 @@ class User extends Authenticatable
         'password',
         'estado_id',
         'rol_id',
+        'contacto_id',
     ];
 
     /**
@@ -47,7 +48,7 @@ class User extends Authenticatable
     ];
 
     public function contacto(){
-        return $this->hasOne(Contacto::class,'contacto_id');
+        return $this->hasOne(Contacto::class,'user_id');
     }
 
     public function rol(){
@@ -61,5 +62,17 @@ class User extends Authenticatable
     public function adquisicion()
     {
         return $this->hasMany(Adquisicion::class, 'user_id');
+    }
+
+    public function departamento(){
+        return $this->hasMany(Departamento::class,'user_id');
+    }
+
+    public function revision(){
+        return $this->hasMany(Revision_Tecnica::class,'user_id');
+    }
+
+    public function solicitud(){
+        return $this->hasMany(Solicitud::class,'user_id');
     }
 }

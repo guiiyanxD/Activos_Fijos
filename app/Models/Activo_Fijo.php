@@ -37,4 +37,20 @@ class Activo_Fijo extends Model
     public function movimiento(){
         return $this->belongsTo(Movimiento::class, 'movimiento_id');
     }
+
+    public function codificacion(){
+        return $this->hasMany(Codificacion::class,'AF_id');
+    }
+
+    public function depreciacion(){
+        return $this->hasMany(Depreciacion::class, 'AF_id');
+    }
+
+    public function revaluo(){
+        return $this->hasMany(Revaluo::class,'AF_id');
+    }
+
+    public function revision(){
+        return $this->hasMany(Revision_Tecnica::class,'AF_id');
+    }
 }

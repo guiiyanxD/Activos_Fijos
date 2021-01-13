@@ -13,4 +13,12 @@ class Detalle_Adquisicion extends Model
     protected $fillable=[
         'nombre','adquisicion_id','categoria_id',
     ];
+
+    public function adquisicion(){
+        return $this->belongsTo(Adquisicion::class,'adquisicion_id');
+    }
+
+    public function categoria(){
+        return $this->belongsTo(Categoria::class,'categoria_id');
+    }
 }

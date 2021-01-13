@@ -15,13 +15,11 @@ class CreateContactosTable extends Migration
     {
         Schema::create('contactos', function (Blueprint $table) {
             $table->id('id_contacto');
-            $table->unsignedBigInteger('usuario_id');
             $table->string('direccion')->nullable();
             $table->integer('celular')->nullable();
             $table->integer('telefono')->nullable();
             $table->string('email_personal');
-            $table->foreign('usuario_id')->references('id_usuario')->on('users')->onDelete('cascade');
-            $table->timestamps();
+            $table->timestamps(); //TODO: analizar mejor la relacion entre contactos y usuarios.
         });
     }
 

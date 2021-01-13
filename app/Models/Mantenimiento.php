@@ -13,4 +13,8 @@ class Mantenimiento extends Model
     protected $fillable=[
         'problema','solucion','fecha_inicio','fecha_fin','duracion','costo','revision_id',
     ];
+
+    public function revision(){
+        return $this->belongsTo(Revision_Tecnica::class,'revision_id');
+    }
 }

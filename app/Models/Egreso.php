@@ -13,4 +13,8 @@ class Egreso extends Model
     protected $fillable=[
         'revision_id','fecha','descripcion',
     ];
+
+    public function revision(){
+        return $this->belongsTo(Revision_Tecnica::class,'revision_id');
+    }
 }

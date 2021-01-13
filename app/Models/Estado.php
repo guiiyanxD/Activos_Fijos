@@ -23,4 +23,12 @@ class Estado extends Model
         return $this->hasOne(Activo_Fijo::class,'estado_id');
     }
 
+    public function codificacion(){
+        return $this->hasOne(Codificacion::class,'estado_id');
+    }
+
+    public function proveedor(){
+        return $this->hasOne(Proveedor::class,'estado_id');
+    }
+
 }

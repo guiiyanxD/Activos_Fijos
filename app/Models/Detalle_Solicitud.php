@@ -13,4 +13,12 @@ class Detalle_Solicitud extends Model
     protected $fillable=[
         'solicitud_id','categoria_id','descripcion','cantidad',
     ];
+
+    public function solicitud(){
+        return $this->belongsTo(Solicitud::class, 'solicitud_id');
+    }
+
+    public function categoria(){
+        return $this->belongsTo(Categoria::class, 'categoria_id');
+    }
 }

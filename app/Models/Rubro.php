@@ -18,4 +18,8 @@ class Rubro extends Model
         'depreciar',
         'actualiza',
     ];
+
+    public function categoria(){
+        return $this->hasOne(Categoria::class,'rubro_id');
+    }
 }

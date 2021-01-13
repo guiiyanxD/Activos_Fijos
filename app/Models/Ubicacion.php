@@ -13,4 +13,8 @@ class  Ubicacion extends Model
     protected $fillable = [
         'edificio','ciudad','pais','estado',
     ];
+
+    public function departamento(){
+        return $this->hasMany(Departamento::class, 'ubicacion_id');
+    }
 }

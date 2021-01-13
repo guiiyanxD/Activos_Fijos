@@ -17,4 +17,8 @@ class Movimiento extends Model
     public function activo(){
         return $this->hasMany(Activo_Fijo::class,'movimiento_id');
     }
+
+    public function departamento(){
+        return $this->belongsTo(Departamento::class,'departamento_id');
+    }
 }
