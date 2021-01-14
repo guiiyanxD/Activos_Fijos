@@ -19,7 +19,10 @@ class CreateContactosTable extends Migration
             $table->integer('celular')->nullable();
             $table->integer('telefono')->nullable();
             $table->string('email_personal');
-            $table->timestamps(); //TODO: analizar mejor la relacion entre contactos y usuarios.
+            $table->unsignedBigInteger('usuario_id');
+            $table->timestamps();
+
+            $table->foreign('usuario_id')->references('id_usuario')->on('users')->onDelete('cascade');
         });
     }
 
