@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Estado;
+use App\Models\Rol;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -30,8 +32,8 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => $this->faker->password, // password
             'remember_token' => Str::random(10),
-            'estado_id' => $this->faker->randomDigit,
-            'rol_id' => $this->faker->randomDigit,
+            'estado_id' => null,
+            'rol_id' => null,
         ];
     }
 }
