@@ -14,8 +14,10 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+        $user = User::factory()->count(3)->create();
 
-        $response->assertStatus(200);
+        $user->each(function($user){
+            dump($user->toArray());
+        });
     }
 }

@@ -32,8 +32,8 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => $this->faker->password, // password
             'remember_token' => Str::random(10),
-            'estado_id' => null,
-            'rol_id' => null,
+            'estado_id' => Estado::factory(),
+            'rol_id' => Rol::factory(),
         ];
     }
 }
