@@ -8,7 +8,15 @@
      <div class="col s12 center"> <h4>Gestionar Rubro</h4></div>
      
                 <div class="row">
-                      
+                  <div class="col s12"><br></div>
+                         
+                  <div class="col s12 green lighten-4 center" >
+                    @if (session('info'))
+                    <span>¡{{session('info')}}!</span>
+                     
+                      @endif
+                  </div>
+                  <div class="col s12"><br></div>
                       <div class="col l4 s12">
                         <input placeholder="Ingrese el codigo" id="id" type="text" class="validate"required>
                         <label for="id"></label>
@@ -29,60 +37,33 @@
                         <thead>
                             <tr>
                               <th>Codigo</th>
+                              <th>Nombre</th>
                               <th>Descripcion</th>
                               <th>Coeficiente</th>
                               <th>Vida Util</th>
                               <th>Deprecia</th>
                               <th>Actualiza</th>
-                              <th>Categoria</th>
+                              
                              </tr>
                           </thead>
                       <tbody>
                           
-                          <tr>
-                               <td>1</td>
-                               <td>Construcciones</td>
-                               <td>0.2</td>
-                               <td>10</td>
-                               <td>500</td>
-                               <td>0</td>
-                               <td>Tangible</td>
-                                                            
-                               
-                               <td>
-                                  <a class="btn btn-primary blue darken-1">  <i class="material-icons">edit</i>Editar</a>
-                                  <button class="btn btn-primary red darken-1">  <i class="material-icons">delete</i>Eliminar</button>
-                               </td>
-                          </tr>
+                          
 
-                          <tr>
-                            <td>2</td>
-                            <td>Mobiliario</td>
-                            <td>0.2</td>
-                            <td>15</td>
-                            <td>200</td>
-                            <td>0</td>
-                            <td>Tangible</td>
-                                                         
-                            
-                            <td>
-                               <a class="btn btn-primary blue darken-1">  <i class="material-icons">edit</i>Editar</a>
-                               <button class="btn btn-primary red darken-1">  <i class="material-icons">delete</i>Eliminar</button>
-                            </td>
-                       </tr>
-                       <tr>
+                                              <tr>
                         <td>3</td>
                         <td>Equipos Informaticos</td>
-                        <td>0.1</td>
+                        <td>3</td>
+                        <td>1</td>
                         <td>5</td>
                         <td>100</td>
                         <td>0</td>
-                        <td>Tangible</td>
+                     
                                                      
                         
                         <td>
-                           <a class="btn btn-primary blue darken-1">  <i class="material-icons">edit</i>Editar</a>
-                           <button class="btn btn-primary red darken-1">  <i class="material-icons">delete</i>Eliminar</button>
+                           <a class="btn btn-primary blue darken-1">  <i class="material-icons">edit</i></a>
+                           <button class="btn btn-primary red darken-1" onclick="return confirm('¿Esta seguro que desea Eliminar el Registro?')">  <i class="material-icons">delete</i></button>
                         </td>
                    </tr>
                             </tbody>
@@ -99,3 +80,5 @@
         
     
 @endsection
+
+

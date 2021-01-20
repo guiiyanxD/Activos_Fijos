@@ -1,3 +1,4 @@
+
 @extends('layouts.plantillabase');
 
 @section('contenido')
@@ -8,7 +9,15 @@
      <div class="col s12 center"> <h4>Gestionar Proveedores</h4></div>
      
                 <div class="row">
-                      
+                  <div class="col s12"><br></div>
+                         
+                  <div class="col s12 green lighten-4 center" >
+                    @if (session('info'))
+                    <span>¡{{session('info')}}!</span>
+                     
+                      @endif
+                  </div>
+                  <div class="col s12"><br></div>
                       <div class="col l4 s12">
                         <input placeholder="Ingrese el codigo" id="id" type="text" class="validate"required>
                         <label for="id"></label>
@@ -50,40 +59,11 @@
                                                         
                                
                                <td>
-                                  <a class="btn btn-primary blue darken-1">  <i class="material-icons">edit</i></a>
-                                  <button class="btn btn-primary red darken-1">  <i class="material-icons">delete</i></button>
+                                  <a class="btn btn-primary blue darken-1" href="">  <i class="material-icons">edit</i></a>
+                                  <button class="btn btn-primary red darken-1" onclick="return confirm('¿Esta seguro que desea Eliminar el Registro?')">  <i class="material-icons">delete</i></button>
                                </td>
                           </tr>
-                          <tr>
-                            <td>2</td>
-                            <td>Leonardo</td>
-                            <td>Saavedra</td>
-                            <td>Lema</td>
-                            <td>Av.Santos Dumont calle Holanda nro 100</td>
-                            <td>60974416</td>
-                            <td>Activo</td>
-                                                     
-                            
-                            <td>
-                               <a class="btn btn-primary blue darken-1">  <i class="material-icons">edit</i></a>
-                               <button class="btn btn-primary red darken-1">  <i class="material-icons">delete</i></button>
-                            </td>
-                       </tr>
-                       <tr>
-                        <td>3</td>
-                        <td>Laura</td>
-                        <td>Arias</td>
-                        <td>Torrez</td>
-                        <td>Av. España calle ayacucho nro 204</td>
-                        <td>6887266</td>
-                        <td>Activo</td>
-                                                 
-                        
-                        <td>
-                           <a class="btn btn-primary blue darken-1">  <i class="material-icons">edit</i></a>
-                           <button class="btn btn-primary red darken-1">  <i class="material-icons">delete</i></button>
-                        </td>
-                   </tr>
+                          
                               
                             </tbody>
                     </table>
@@ -99,3 +79,5 @@
         
     
 @endsection
+
+

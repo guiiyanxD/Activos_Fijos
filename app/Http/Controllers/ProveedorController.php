@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Proveedor;
 class ProveedorController extends Controller
 {
     /**
@@ -11,9 +11,17 @@ class ProveedorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+   
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        //
+      
+        return view('proveedores.index');
     }
 
     /**
@@ -23,7 +31,7 @@ class ProveedorController extends Controller
      */
     public function create()
     {
-        //
+        return view('proveedores.create');
     }
 
     /**
@@ -34,7 +42,9 @@ class ProveedorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+   
+      return redirect()->route('proveedores.index')->with('info','Datos registrados satisfactoriamente');
+      // return $request;
     }
 
     /**
@@ -54,9 +64,10 @@ class ProveedorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Proveedor $proveedore)
     {
-        //
+       
+        return view('proveedores.edit',compact('proveedore'));
     }
 
     /**
@@ -66,9 +77,9 @@ class ProveedorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Proveedor $proveedore)
     {
-        //
+        return redirect()->route('proveedores.index')->with('info','Datos registrados satisfactoriamente');
     }
 
     /**

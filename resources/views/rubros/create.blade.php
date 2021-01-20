@@ -6,67 +6,43 @@
   
 <div class="row">
     <div class="col s2"></div>
-      <form class="col s8" action="{{'rubros.store'}}" method="POST">
-        @csrf
+      <form class="col s8" action="{{route('rubros.store')}}" method="POST">
+       @csrf
     <div class="row card-panel center">
          <div class="col s12 "> <h4>Registro de Rubro</h4></div>
+     
                 <div class="input-field col s12">
-                <input placeholder="Ingrese el nombre del Rubro" name="nombre" type="text" value="{{old('nombre')}}">
+                <input placeholder="Ingrese el nombre del Rubro" name="nombre" type="text" value="{{old('nombre')}}"class="validate"required>
                 <label for="nombre">Nombre del Rubro:</label>
-                @error('nombre')
-                    <br>
-                    <small>*{{$message}}</small>
-                    <br>
-                @enderror
+                
                 </div>
+                <div class="input-field col s12">
+                  <input name="descripcion" type="text" value="{{old('descripcion')}}"class="validate"required>
+                  <label for="descripcion">Descripcion:</label>
+                  
+                  </div>
                 <div class="input-field col l6 s12">
-                <input name="coeficiente" type="text" value="{{old('coeficiente')}}">
+                <input name="coeficiente" type="number" value="{{old('coeficiente')}}"class="validate"required>
                 <label for="coeficiente">Coeficiente de Depreciacion:</label>
-                @error('coeficiente')
-                    <br>
-                    <small>*{{$message}}</small>
-                    <br>
-                @enderror
+               
                 </div>
                 <div class="input-field col l6 s12">
-                    <input name="vida" type="text" value="{{old('vida')}}">
+                    <input name="vida" type="number" value="{{old('vida')}}"class="validate"required>
                     <label for="vida">Vida Util:</label>
-                    @error('vida')
-                    <br>
-                    <small>*{{$message}}</small>
-                    <br>
-                @enderror
+                   
                 </div>
                 
                  <div class="input-field col l6 s12">
-                    <input name="depreciacion" type="text" value="{{old('depreciacion')}}">
+                    <input name="depreciacion" type="number" value="{{old('depreciacion')}}" class="validate"required>
                     <label for="depreciacion">Depreciacion:</label>
-                    @error('depreciacion')
-                    <br>
-                    <small>*{{$message}}</small>
-                    <br>
-                @enderror
+                   
                   </div>
                   <div class="input-field col l6 s12">
-                    <input name="actualizacion" type="text" value="{{old('actualizacion')}}">
+                    <input name="actualizacion" type="number" value="{{old('actualizacion')}}" class="validate"required>
                     <label for="actualizacion">Actualizacion:</label>
-                    @error('actualizacion')
-                    <br>
-                    <small>*{{$message}}</small>
-                    <br>
-                    @enderror
+                   
                   </div>
-                        <div class="input-field col l6 s12">
-                           
-                            <select>
-                              <option value="" disabled selected>Seleccionar</option>
-                              <option value="1">Categoria 1</option>
-                              <option value="2">Categoria 2</option>
-                             
-                            </select>
-                            <label>Categoria:</label>
-                          
-                        </div>
+                        
                         
                       <div class="col s12"></div>
                       <div class="col s4"></div>
