@@ -69,7 +69,7 @@
  
        
         <div class="col s12 grey lighten-4 ">
-           <div class="responsive-section container">  @yield('contenido')</div>
+           <div class="responsive-section container ">  @yield('contenido')</div>
         </div>
    
 
