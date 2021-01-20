@@ -28,7 +28,7 @@
                       </div>
                   
                       <div class="col l3 s12 center">
-                        <button class="btn btn-primary ">  <i class="material-icons">add_circle</i>Crear Nuevo</button>
+                        <button class="btn btn-primary " onclick="{{route('rubros.create')}}">  <i class="material-icons">add_circle</i>Crear Nuevo</button>
                       </div>
                
                   <div class="col s12"><h5> Listado de Rubros</h5></div>
@@ -49,23 +49,27 @@
                       <tbody>
                           
                           
-
-                                              <tr>
-                        <td>3</td>
-                        <td>Equipos Informaticos</td>
-                        <td>3</td>
-                        <td>1</td>
-                        <td>5</td>
-                        <td>100</td>
-                        <td>0</td>
-                     
-                                                     
+                        <tr>
+                        @foreach ($rubro as $rubro)
                         
-                        <td>
-                           <a class="btn btn-primary blue darken-1">  <i class="material-icons">edit</i></a>
-                           <button class="btn btn-primary red darken-1" onclick="return confirm('¿Esta seguro que desea Eliminar el Registro?')">  <i class="material-icons">delete</i></button>
-                        </td>
-                   </tr>
+                             <td>{{$rubro->id_rubro}}</td>
+                             <td>{{$rubro->nombre}}</td>
+                             <td>{{$rubro->descripcion}}</td>
+                             <td>{{$rubro->coeficiente}}</td>
+                             <td>{{$rubro->vida_util}}</td>
+                             <td>{{$rubro->depreciar}}</td>
+                             <td>{{$rubro->actualiza}}</td>
+
+                             <td>
+                              <a class="btn btn-primary blue darken-1" href="{{route('rubros.edit')}}">  <i class="material-icons">edit</i></a>
+                              <button class="btn btn-primary red darken-1" onclick="return confirm('¿Esta seguro que desea Eliminar el Registro?')">  <i class="material-icons">delete</i></button>
+                           </td>
+                          
+                          
+                          @endforeach
+                        </tr>
+                       
+ 
                             </tbody>
                     </table>
                   </div>

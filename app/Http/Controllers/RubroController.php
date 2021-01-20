@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-
 use App\Models\Rubro;
 
 class RubroController extends Controller
@@ -15,8 +13,8 @@ class RubroController extends Controller
      * @return \Illuminate\Http\Response
      */
      public function index()
-     {
-         return view('rubros.index');
+     {    $rubro=Rubro::all();
+         return view('rubros.index')->with('rubro',$rubro);
      }
  
      /**
@@ -59,7 +57,7 @@ class RubroController extends Controller
       */
      public function edit(Rubro $rubro)
      {
-         return view('rubros.edit',compact('rubro'));
+         return view('rubros.edit')->with('rubro');
      }
  
      /**

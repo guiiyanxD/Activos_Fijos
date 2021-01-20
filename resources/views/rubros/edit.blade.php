@@ -17,7 +17,7 @@
                 <label for="codigo">Codigo de Rubro:</label>
    
               <div class="input-field col s12">
-              <input placeholder="Ingrese el nombre del Rubro" name="nombre" type="text" value="{{$rubro->nombre}}" class="validate"required>
+              <input disabled name="nombre" type="text" value="{{$rubro->nombre}}" class="validate"required>
               <label for="nombre">Nombre del Rubro:</label>
               
               </div>

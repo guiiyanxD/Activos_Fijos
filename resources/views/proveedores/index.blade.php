@@ -19,7 +19,7 @@
                   </div>
                   <div class="col s12"><br></div>
                       <div class="col l4 s12">
-                        <input placeholder="Ingrese el codigo" id="id" type="text" class="validate"required>
+                        <input placeholder="Ingrese el codigo" id="id" type="text" class="validate">
                         <label for="id"></label>
                       </div>
                       <div class="col l2 s12 center">
@@ -29,7 +29,7 @@
                       </div>
                   
                       <div class="col l3 s12 center">
-                        <button class="btn btn-primary ">  <i class="material-icons">add_circle</i>Crear Nuevo</button>
+                        <a class="btn btn-primary " href="{{route('proveedores.create')}}">  <i class="material-icons">add_circle</i>Crear Nuevo</a>
                       </div>
                
                   <div class="col s12"><h5> Listado Proveedores</h5></div>
@@ -37,34 +37,34 @@
                     <table class="responsive-table centered highlight">
                         <thead>
                             <tr>
-                              <th>ID</th>
-                              <th>Nombres</th>
-                              <th>Apellido Paterno</th>
-                              <th>Apellido Materno</th>
+                              <th>Codigo</th>
+                              <th>Nombre</th>
                               <th>Direccion</th>
                               <th>Movil</th>
+                              <th>Telefono</th>
+                              <th>e-mail</th>
                               <th>Estado</th>
                              </tr>
                           </thead>
                       <tbody>
                           
-                          <tr>
-                               <td>1</td>
-                               <td>Diego</td>
-                               <td>Fernandez</td>
-                               <td>Sandi</td>
-                               <td>Av. prefecto Rivas calle Choretti nro 109</td>
-                               <td>6097266</td>
-                               <td>Activo</td>
-                                                        
-                               
-                               <td>
-                                  <a class="btn btn-primary blue darken-1" href="">  <i class="material-icons">edit</i></a>
+                        @foreach ($proveedore as $proveedor)
+                        <tr>
+                             <td>{{$proveedor->id_proveedor}}</td>
+                             <td>{{$proveedor->nombre}}</td>
+                             <td>{{.}}</td>
+                             <td>{{.}}</td>
+                             <td>{{.}}</td>
+                             <td>{{.}}</td>
+                             <td>{{.}}</td>
+
+                             <td>
+                                  <a class="btn btn-primary blue darken-1" href="{{route('proveedores.edit',$proveedore)}}">  <i class="material-icons">edit</i></a>
                                   <button class="btn btn-primary red darken-1" onclick="return confirm('¿Esta seguro que desea Eliminar el Registro?')">  <i class="material-icons">delete</i></button>
                                </td>
                           </tr>
                           
-                              
+                          @endforeach
                             </tbody>
                     </table>
                   </div>

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\RubroController;
-use App\Http\Controllers\ProveedorController;
+use App\Http\Controllers\ProveedoreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +27,6 @@ use Illuminate\Support\Facades\Route;
 //esto me crea todas las rutas necesarias para rubro automaticamente
 Route::resource('rubros',RubroController::class);
 //esto me crea todas las rutas necesarias para proveedores automaticamente
-Route::resource('proveedores',ProveedorController::class);
+Route::resource('proveedores',ProveedoreController::class);
  
 //php artisan r:l   para ver todas las rutas creadas

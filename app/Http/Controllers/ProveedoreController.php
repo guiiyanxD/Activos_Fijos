@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Proveedor;
-class ProveedorController extends Controller
+
+use App\Models\Proveedore;
+
+class ProveedoreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +22,8 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-      
-        return view('proveedores.index');
+         $proveedore= Proveedore::all();
+        return view('proveedores.index')->with('proveedore');
     }
 
     /**
@@ -64,10 +66,10 @@ class ProveedorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Proveedor $proveedore)
+    public function edit(Proveedore $proveedore)
     {
        
-        return view('proveedores.edit',compact('proveedore'));
+        return view('proveedores.edit')->with('proveedore');
     }
 
     /**
@@ -77,7 +79,7 @@ class ProveedorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Proveedor $proveedore)
+    public function update(Request $request, Proveedore $proveedore)
     {
         return redirect()->route('proveedores.index')->with('info','Datos registrados satisfactoriamente');
     }
